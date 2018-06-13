@@ -12,7 +12,7 @@ public class Conta {
         System.out.println("O total de contas é " + Conta.total);
         this.agencia = agencia;
         this.numero = numero;
-        this.saldo = 100;
+//        this.saldo = 0;
         System.out.println("Estou criando uma conta " + this.numero);
     }
 
@@ -77,5 +77,10 @@ public class Conta {
     public static int getTotal(){
         return Conta.total;
     }
+
+	@Override
+	public String toString() {
+		return "Conta [saldo=" + saldo + ", agencia=" + agencia + ", numero=" + numero + ", titular=" + titular + "]";
+	}
 
 }
