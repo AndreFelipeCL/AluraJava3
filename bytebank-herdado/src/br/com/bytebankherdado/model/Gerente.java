@@ -1,23 +1,28 @@
 package br.com.bytebankherdado.model;
-public class Gerente extends Funcionario {
 
-	private int senha;
+import br.com.bytebankherdado.interfaces.Autenticavel;
+
+public class Gerente extends Funcionario implements Autenticavel {
 	
+	private AutenticacaoUtil autenticador;
+	
+	public Gerente() {
+		this.autenticador = new AutenticacaoUtil();
+	}
+
+	@Override
+	public boolean autentica(int senha) {
+		return this.autentica(senha);
+	}
+
+	@Override
+	public void setSenha(int senha) {
+		this.autenticador.setSenha(senha);
+	}
+
 	@Override
 	public double getBonificacao() {
-	    return super.getSalario();
-	}
-	
-	public void setSenha(int senha) {
-		this.senha = senha;
-	}
-
-	public boolean autentica(int senha) {
-		if (this.senha == senha) {
-			return true;
-		} else {
-			return false;
-		}
+		return 50;
 	}
 
 }

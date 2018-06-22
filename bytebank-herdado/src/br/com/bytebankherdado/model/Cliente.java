@@ -2,11 +2,11 @@ package br.com.bytebankherdado.model;
 
 import br.com.bytebankherdado.interfaces.Autenticavel;
 
-public class Administrador extends Funcionario implements Autenticavel {
+public class Cliente implements Autenticavel {
 	
 	private AutenticacaoUtil autenticador;
 	
-	public Administrador() {
+	public Cliente() {
 		this.autenticador = new AutenticacaoUtil();
 	}
 
@@ -19,10 +19,5 @@ public class Administrador extends Funcionario implements Autenticavel {
 	public void setSenha(int senha) {
 		this.autenticador.setSenha(senha);
 	}
-
-	@Override
-	public double getBonificacao() {
-		return 50;
-	}
-
+	
 }
